@@ -9,6 +9,10 @@ class Main:
         self.run()
 
     def run(self):
+        """
+        Main loop for the Habit Tracking App.
+        Allows the user to perform various actions on habits.
+        """
         while True:
             print("\nHabit Tracking App Menu:")
             print("1. Add a Habit")
@@ -31,6 +35,10 @@ class Main:
                 print("Invalid choice. Please enter a valid option.")
 
     def add_habit(self):
+        """
+        Add a new habit to the database.
+        Prompts the user for the habit's name, frequency, and category.
+        """
         name = input("Enter the name of the habit: ")
         frequency = input("Enter the frequency of the habit: ")
         category = input("Enter the category of the habit: ")
@@ -38,12 +46,16 @@ class Main:
         self.habit_database.add_habit(name, frequency, category)
 
     def mark_habit_completed(self):
+        """
+        Mark a habit as completed and update its streak.
+        Prompts the user for the habit's name and updates the database.
+        """
         name = input("Enter the name of the habit you completed: ")
 
         habit = self.habit_database.get_habit_by_name(name)
 
         if habit:
-            habit.last_checked = datetime.now()
+            habit.last_checked = datetime.now().date()
             habit.streak += 1
             self.habit_database.conn.execute('''
                 UPDATE habits
@@ -56,6 +68,9 @@ class Main:
             print("Habit not found.")
 
     def list_habits(self):
+        """
+        List all habits in the database with their details.
+        """
         habits = self.habit_database.get_all_habits()
         if habits:
             print("Habits in the Database:")

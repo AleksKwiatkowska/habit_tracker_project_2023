@@ -1,4 +1,4 @@
-from habit import Habit  # Import the Habit class from the Habit module
+from habit import Habit
 
 class HabitTracker:
     """
@@ -60,3 +60,4 @@ class HabitTracker:
             list: A list of Habit objects.
         """
         return self.habits
+    
