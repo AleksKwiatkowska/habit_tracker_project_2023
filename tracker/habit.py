@@ -13,7 +13,7 @@ class Habit:
         streak (int): The current streak of consecutive completions.
     """
 
-    def __init__(self, name, frequency, category):
+    def __init__(self, name, frequency, category, id=None):
         """
         Initializes a new habit.
 
@@ -22,6 +22,7 @@ class Habit:
             frequency (int): The frequency of the habit.
             category (text): The category of the habit.
         """
+        self.id = id
         self.name = name
         self.frequency = frequency
         self.category = category

@@ -92,7 +92,7 @@ class HabitAnalysis:
         List habits with the same specified frequency.
         """
         frequency = input("Enter the frequency (e.g., 1, 7, 14 etc.): ")
-        habits = self.habit_database.get_habits_by_frequency(frequency)
+        habits = self.habit_database.get_habit_by_frequency(frequency)
         if habits:
             print(f"Habits with {frequency} frequency:")
             for habit in habits:

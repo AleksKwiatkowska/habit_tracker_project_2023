@@ -22,7 +22,7 @@ class HabitDatabase:
             CREATE TABLE IF NOT EXISTS habits (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT NOT NULL,
-                frequency INTEGER,
+                frequency INTEGER NOT NULL,
                 category TEXT NOT NULL,
                 created_at DATE NOT NULL,
                 last_checked DATE,
@@ -69,7 +69,7 @@ class HabitDatabase:
             return habit
         return None
     
-    def get_habits_by_frequency(self, frequency):
+    def get_habit_by_frequency(self, frequency):
         """
         Retrieve habits with a specific frequency.
 
@@ -113,3 +113,5 @@ class HabitDatabase:
             habit.frequency = frequency
             habits.append(habit)
         return habits
+    
+

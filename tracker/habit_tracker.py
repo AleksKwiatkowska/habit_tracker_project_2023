@@ -18,9 +18,9 @@ class HabitTracker:
         Adds a new habit to the tracker.
 
         Args:
-            name (str): The name of the habit.
-            frequency (str): The frequency of the habit.
-            category (str): The category of the habit.
+            name (text): The name of the habit.
+            frequency (int): The frequency of the habit.
+            category (text): The category of the habit.
 
         Returns:
             Habit: The newly created Habit object.
@@ -28,20 +28,6 @@ class HabitTracker:
         habit = Habit(name, frequency, category)
         self.habits.append(habit)
         return habit
-
-    def edit_habit(self, habit, new_name, new_frequency, new_category):
-        """
-        Edits the properties of an existing habit.
-
-        Args:
-            habit (Habit): The Habit object to be edited.
-            new_name (str): The new name for the habit.
-            new_frequency (str): The new frequency for the habit.
-            new_category (str): The new category for the habit.
-        """
-        habit.name = new_name
-        habit.frequency = new_frequency
-        habit.category = new_category
 
     def mark_habit_completed(self, habit):
         """
