@@ -11,7 +11,7 @@ tbc.
 ## Installation
 
 ```shell
-pip install -r requirements.txt
+conda create --name <env> --file requirements.txt
 ```
 
 ## Usage
