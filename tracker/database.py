@@ -108,7 +108,8 @@ class HabitDatabase:
             id, name, frequency, category, created_at, last_checked, streak = row
             habit = Habit(name, frequency, category)
             habit.created_at = created_at
-            habit.last_checked = last_checked
+            # Set last_checked to None for habits retrieved from the database
+            habit.last_checked = None if last_checked is None else datetime.strptime(last_checked, '%Y-%m-%d').date()
             habit.streak = streak
             habit.frequency = frequency
             habits.append(habit)
