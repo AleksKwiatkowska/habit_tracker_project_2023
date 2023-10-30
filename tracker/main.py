@@ -40,7 +40,7 @@ class Main:
         Prompts the user for the habit's name, frequency, and category.
         """
         name = input("Enter the name of the habit: ")
-        frequency = input("Enter the frequency of the habit: ")
+        frequency = input("Enter the frequency of the habit as a number (1 for daily habits, 7 for weekly habits etc.): ")
         category = input("Enter the category of the habit: ")
 
         self.habit_database.add_habit(name, frequency, category)
@@ -55,8 +55,7 @@ class Main:
         habit = self.habit_database.get_habit_by_name(name)
 
         if habit:
-            habit.last_checked = datetime.now().date()
-            habit.streak += 1
+            habit.mark_habit_completed()
             self.habit_database.conn.execute('''
                 UPDATE habits
                 SET last_checked = ?, streak = ?

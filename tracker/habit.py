@@ -39,15 +39,17 @@ class Habit:
         if self.last_checked:
             days_difference = (completed_date - self.last_checked).days
 
-            # If there's a break in the streak, reset it to 1
+        # Check if the habit hasn't been checked for the same date
             if days_difference == 1:
                 self.streak += 1
+            elif days_difference == 0:
+            # If the habit was already checked today, do not increase the streak
+                pass
             else:
                 self.streak = 1
         else:
-            # If last_checked is None, it's the first completion
+        # If last_checked is None, it's the first completion
             self.streak = 1
-
         self.last_checked = completed_date
      
     def check_streak(self):

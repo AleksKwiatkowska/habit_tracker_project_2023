@@ -31,7 +31,7 @@ class HabitTracker:
 
     def mark_habit_completed(self, habit):
         """
-        Marks a habit as completed for the current date and time.
+        Marks a habit as completed for the current date.
 
         Args:
             habit (Habit): The Habit object to be marked as completed.

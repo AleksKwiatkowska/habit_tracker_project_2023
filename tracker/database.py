@@ -1,3 +1,4 @@
+from datetime import date
 import sqlite3
 from habit import Habit
 from datetime import datetime
@@ -43,8 +44,8 @@ class HabitDatabase:
         cursor = self.conn.cursor()
         cursor.execute('''
             INSERT INTO habits (name, frequency, category, created_at, last_checked, streak)
-            VALUES (?, ?, ?, DATE('now'), DATE('now'), 0)
-        ''', (name, frequency, category))
+            VALUES (?, ?, ?, DATE(?), DATE(?), 0)
+        ''', (name, frequency, category,date.today(), date.today()))
         self.conn.commit()
 
     def get_habit_by_name(self, name):
@@ -63,8 +64,8 @@ class HabitDatabase:
         if row:
             id, name, frequency, category, created_at, last_checked, streak = row
             habit = Habit(name, frequency, category)
-            habit.created_at = created_at
-            habit.last_checked = last_checked
+            habit.created_at = datetime.strptime(created_at, '%Y-%m-%d').date()
+            habit.last_checked = datetime.strptime(last_checked, '%Y-%m-%d').date() if last_checked else None
             habit.streak = streak
             return habit
         return None
@@ -109,7 +110,7 @@ class HabitDatabase:
             habit = Habit(name, frequency, category)
             habit.created_at = created_at
             # Set last_checked to None for habits retrieved from the database
-            habit.last_checked = None if last_checked is None else datetime.strptime(last_checked, '%Y-%m-%d').date()
+            habit.last_checked = None if last_checked is None else date.today()
             habit.streak = streak
             habit.frequency = frequency
             habits.append(habit)
