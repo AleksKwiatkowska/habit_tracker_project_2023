@@ -29,16 +29,29 @@ class Habit:
         self.created_at = date.today()
         self.last_checked = None
         self.streak = 0
-
+        
     def mark_habit_completed(self):
         """
         Marks the habit as completed for the current date.
         """
         completed_date = date.today()
-        if self.last_checked is None or completed_date > self.last_checked:
-            self.streak += 1
-        self.last_checked = completed_date
 
+        # Check if there's a last_checked date
+        if self.last_checked is not None:
+            # Calculate the difference between today and the last_checked date
+            delta = completed_date - self.last_checked
+            # If the difference is exactly one day, increment the streak
+            if delta.days == 1:
+                self.streak += 1
+            # If the difference is more than one day, reset the streak
+            elif delta.days > 1:
+                self.streak = 1
+        else:
+            # If there was no last_checked date, it's the first completion
+            self.streak = 1
+            
+        self.last_checked = completed_date
+        
     def check_streak(self):
         """
         Checks the current streak of consecutive completions.
