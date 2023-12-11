@@ -10,7 +10,7 @@ The Habit Tracker is a Python application designed to help users manage and moni
 
 ```shell
 git clone https://github.com/AleksKwiatkowska/habit_tracker_project_2023.git
-cd habit_tracker_project_2023/tracker
+cd habit_tracker_project_2023
 pip install -r requirements.txt
 ```
 
@@ -50,3 +50,22 @@ The Habit Analysis tool will display a menu. Follow the on-screen prompts to sel
 
 ### Notes
 Ensure that the habit_tracker.py, database.py, and analyze.py modules are present and properly configured in your project for the analysis tool to work correctly.
+
+# Writing and Running Unit Tests
+
+To ensure the reliability and correctness of your Habit Tracker project, it's essential to write and run unit tests. Follow these steps to execute the unit tests for the project:
+
+**Change Directory:**
+Open your command prompt or terminal and navigate to the `tracker` directory using the following command:
+```shell
+cd \habit_tracker_project_2023\tracker
+```
+
+Run Unit Tests:
+
+Execute the following command to run the unit tests
+```shell
+python -m unittest -v test.py
+```
+If all tests pass, you should see a summary indicating the number of tests run and their status.
+
