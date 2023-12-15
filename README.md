@@ -2,6 +2,11 @@
 
 This project is the final assignment for the "Object-oriented and Functional Programming with Python" course at IU Akademie. Developed in 2023 as part of Weiterbildung "Data Analyst - Python."
 
+**Acknowledgments**
+
+This project was partially developed with the assistance of AI tools, including Bing AI and ChatGPT. These tools were utilized to expedite the learning process, grasp new concepts, and facilitate debugging. Their contributions have played a significant role in shaping and enhancing the codebase.
+
+
 ## What it is?
 
 The Habit Tracker is a Python application designed to help users manage and monitor their habits. It allows you to add new habits, mark them as completed, and list all tracked habits, providing insights into your progress and streaks.
@@ -68,4 +73,5 @@ Execute the following command to run the unit tests
 python -m unittest -v test.py
 ```
 If all tests pass, you should see a summary indicating the number of tests run and their status.
+
 
