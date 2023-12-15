@@ -13,6 +13,8 @@ The Habit Tracker is a Python application designed to help users manage and moni
 
 ## Installation
 
+Python version: 3.7 or higher (Python version used by the author: 3.8.17)
+
 ```shell
 git clone https://github.com/AleksKwiatkowska/habit_tracker_project_2023.git
 cd habit_tracker_project_2023
