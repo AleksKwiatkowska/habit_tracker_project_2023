@@ -4,7 +4,7 @@ This project is the final assignment for the "Object-oriented and Functional Pro
 
 **Acknowledgments**
 
-This project was partially developed with the assistance of AI tools, including Bing AI and ChatGPT. These tools were utilized to expedite the learning process, grasp new concepts, and facilitate debugging. Their contributions have played a significant role in shaping and enhancing the codebase.
+This project was partially developed with the assistance of AI tools, including Bing AI and ChatGPT. These tools were utilized to accelerate the learning process, grasp new concepts, and facilitate debugging. Their contributions have played a significant role in shaping and enhancing the codebase.
 
 
 ## What it is?
@@ -39,7 +39,7 @@ and follow instructions on the screen.
 The application will display a menu with options.
 Follow the on-screen prompts to interact with the application.
 
-## Analysis Module
+## Analysis module
 
 The analyze.py module provides a Habit Analysis tool, allowing users to perform various tasks related to habit analysis. The analysis tool is designed to work seamlessly with the Habit Tracker project.
 
@@ -56,11 +56,11 @@ The Habit Analysis tool will display a menu. Follow the on-screen prompts to sel
 ### Notes
 Ensure that the habit_tracker.py, database.py, and analyze.py modules are present and properly configured in your project for the analysis tool to work correctly.
 
-## Running Unit Tests
+## Running unit tests
 
 To ensure the reliability and correctness of your Habit Tracker project, it's essential to write and run unit tests. Follow these steps to execute the unit tests for the project:
 
-**Change Directory:**
+**Change directory:**
 Open your command prompt or terminal and navigate to the `tracker` directory using the following command:
 ```shell
 cd habit_tracker_project_2023\tracker
